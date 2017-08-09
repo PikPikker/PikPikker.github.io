@@ -1,0 +1,413 @@
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title>WoT Italian tech tree by PikPikker</title>
+  <base href="http://armor.kiev.ua/wot/">    
+  <style type="text/css">
+    body {color: #BEBEBE; font-family: Calibri,sans-serif;}
+    #content {margin: 0 auto; position: relative;  width:100%;}
+
+    h1 {      
+      font-size: 180%;
+      font-weight: normal;
+      border-bottom: 1px dotted #BEBEBE;
+    }
+    h2 {text-align: center;}
+    #nations {
+      margin: 0 0 30px;
+      padding: 4px;    
+      border-bottom: 1px solid #BEBEBE;
+    }
+    #nations li {
+      display: inline;
+      margin: 0;
+      padding: 3px 15px;
+      font-size: 110%;
+    }
+    
+    li.active {
+      background: #282516;
+      background: -moz-linear-gradient(top,  rgb(93,94,57) 0%, rgb(40,37,22) 64%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(93,94,57)), color-stop(64%,rgb(40,37,22))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgb(93,94,57) 0%,rgb(40,37,22) 64%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgb(93,94,57) 0%,rgb(40,37,22) 64%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgb(93,94,57) 0%,rgb(40,37,22) 64%); /* IE10+ */
+      background: linear-gradient(top,  rgb(93,94,57) 0%,rgb(40,37,22) 64%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d5e39', endColorstr='#282516',GradientType=0 ); /* IE6-9 */
+
+      border: 1px solid #BEBEBE;
+      border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; -moz-border-radius:5px 5px 0 0; 
+      border-bottom: none;
+      font-weight: bold;
+      position: relative;
+      top: 2px;
+  }
+  li.click {
+    cursor: pointer;
+  }
+  #versions {
+    position: relative; 
+    margin: 8px;
+  }
+  #versions, #versions a {
+    color: #BEBEBE;
+    font-size: 14px;
+  }
+  #versions .tblock {
+    width: 32px; height: 32px;
+    display: inline-block;
+    margin-right: 12px;
+    padding: 2px;
+    vertical-align: middle;
+  }
+  #h_counters {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 1em;
+  }
+  .nationTree {
+    border-bottom: 1px solid #BEBEBE;
+  }
+   body {background-color: #060606;}
+  img {border-width: 0; vertical-align: middle;}
+  a {color: #FFF;}
+  .treeWrapper {
+    position: relative;
+    width: 1612px;
+    height: 620px;
+    margin: 0 auto;
+    font-family: sans-serif; font-size: 1em;
+  }
+
+  #tree {
+    position: relative;  
+    margin: 30px 8px 30px 16px; 
+    width: 1612px;
+    height: inherit;
+    
+  }
+  
+  li.active {
+    background: #060606;
+    background: -moz-linear-gradient(top, rgba(89,89,89,1) 0%, #060606 64%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(89,89,89,1)), color-stop(64%,#060606)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(89,89,89,1) 0%,#060606 64%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(89,89,89,1) 0%,#060606 64%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(89,89,89,1) 0%,#060606 64%); /* IE10+ */
+    background: linear-gradient(top,  rgba(89,89,89,1) 0%,#060606 64%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#060606',GradientType=0 ); /* IE6-9 */
+
+    border: 1px solid #BEBEBE;
+    border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; -moz-border-radius:5px 5px 0 0; 
+    border-bottom: none;
+    font-weight: bold;
+    position: relative;
+    top: 2px;
+  }  
+  
+  .tblock {
+  cursor: pointer;
+  background: rgb(17,14,7); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(17,14,7,1) 3%, rgba(60,60,60,1) 18%, rgba(60,60,60,1) 42%, rgba(16,15,11,1) 82%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,rgba(17,14,7,1)), color-stop(18%,rgba(60,60,60,1)), color-stop(42%,rgba(60,60,60,1)), color-stop(82%,rgba(16,15,11,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(17,14,7,1) 3%,rgba(60,60,60,1) 18%,rgba(60,60,60,1) 42%,rgba(16,15,11,1) 82%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(17,14,7,1) 3%,rgba(60,60,60,1) 18%,rgba(60,60,60,1) 42%,rgba(16,15,11,1) 82%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(17,14,7,1) 3%,rgba(60,60,60,1) 18%,rgba(60,60,60,1) 42%,rgba(16,15,11,1) 82%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(17,14,7,1) 3%,rgba(60,60,60,1) 18%,rgba(60,60,60,1) 42%,rgba(16,15,11,1) 82%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#100f0b',GradientType=0 ); /* IE6-9 */
+  border: 1px solid #a8a8a8; /* #82724e #cbb699 */
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.8); /* Для Firefox */
+  -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.8); /* Для Safari и Chrome */
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.8); /* Параметры тени */
+  width: 126px; height:32px;
+  font-size: 12px;  
+  }
+  .tblock:hover {
+background: rgb(17,14,7); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(17,14,7,1) 3%, rgba(89,89,89,1) 18%, rgba(89,89,89,1) 42%, rgba(16,15,11,1) 82%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,rgba(17,14,7,1)), color-stop(18%,rgba(89,89,89,1)), color-stop(42%,rgba(89,89,89,1)), color-stop(82%,rgba(16,15,11,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(17,14,7,1) 3%,rgba(89,89,89,1) 18%,rgba(89,89,89,1) 42%,rgba(16,15,11,1) 82%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(17,14,7,1) 3%,rgba(89,89,89,1) 18%,rgba(89,89,89,1) 42%,rgba(16,15,11,1) 82%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(17,14,7,1) 3%,rgba(89,89,89,1) 18%,rgba(89,89,89,1) 42%,rgba(16,15,11,1) 82%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(17,14,7,1) 3%,rgba(89,89,89,1) 18%,rgba(89,89,89,1) 42%,rgba(16,15,11,1) 82%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#100f0b',GradientType=0 ); /* IE6-9 */
+  }
+  .tblock span {position: absolute; color: #bebebe; text-shadow: -1px -1px #000;}
+  .tblock .mark {bottom: 1px; right: 4px;}
+  .tblock .class {top: 1px; left: -5px;}
+  .tblock .level {top: 1px; margin-left: 17px;}
+  .tblock .golden {bottom: 0px; left: 4px;}
+  .tblock a {text-decoration: none;}
+  
+  .arrTB, .arrBT, .arrLR, .lineD, .lineU, .line2R, .lineRD, 
+  .lineRU, .arrLRD, .arrLRU {z-index: -1; position: absolute;}
+  
+  .arrTB {top: -39px; left: 60px;}  
+  .arrBT {top: 33px; left: 60px;}
+  .arrLR {top: 13px; right: 127px;}
+  .lineD, .line2R {top: 16px; left: 63px;}
+  .lineU {bottom: 16px; left: 63px;}
+  .lineRD {top: 16px; left: 144px;}
+  .lineRU {bottom: 16px; left: 144px;}
+  .arrLRD {right: 127px; bottom: 27px;}
+  .arrLRU {right: 127px; top: 27px;}
+  
+  .levelLine {z-index: -20; position: absolute; height: 620px; width: 162px; 
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 85%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.04)), color-stop(85%,rgba(255,255,255,0.04)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.04) 85%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.04) 85%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.04) 85%,rgba(255,255,255,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,255,255,0.04) 0%,rgba(255,255,255,0.04) 85%,rgba(255,255,255,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0affffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+  
+  .vicLogo {width: 116px; margin-left: 10px; overflow: hidden;}
+  #levels {width: 1620px; height: 10px; margin-top: 10px; 
+           color: #BEBEBE; font-weight: bold; font-family: Cambria, Arial;}
+  #levels div {width: 162px; text-align: center; float: left; }
+.root {position: absolute; top: 243px;}
+.row1 {top: 0px;}
+.row2 {top: 54px;}
+.row3 {top: 108px;}
+.row4 {top: 162px;}
+.row5 {top: 216px;}
+.row6 {top: 270px;}
+.row7 {top: 324px;}
+.row8 {top: 378px;}
+.row9 {top: 432px;}
+.row10 {top: 486px;}
+.row11 {top: 540px;}
+.row12 {top: 594px;}
+.row13 {top: 648px;}
+.row14 {top: 702px;}
+.row15 {top: 756px;}
+.row16 {top: 810px;}
+.row17 {top: 864px;}
+.column1 {position: absolute; left: 0px;}
+.column2 {position: absolute; left: 162px;}
+.column3 {position: absolute; left: 324px;}
+.column4 {position: absolute; left: 486px;}
+.column5 {position: absolute; left: 648px;}
+.column6 {position: absolute; left: 810px;}
+.column7 {position: absolute; left: 972px;}
+.column8 {position: absolute; left: 1134px;}
+.column9 {position: absolute; left: 1296px;}
+.column10 {position: absolute; left: 1458px;}
+.column11 {position: absolute; left: 1620px;}
+  </style>
+  <script type="text/javascript" src="jquery-1.7.min.js"></script>
+  <script type="text/javascript">
+    
+    function nationClick (e) {
+      $(".nationTree").hide();
+      $("#ntree-" + e.attr("id")).show();
+      
+      old = $("#nations li.active");      
+      old.attr('class', 'click');
+      old.click(function(){ nationClick($(this)); });
+      e.attr('class', 'active');
+      e.unbind('click');
+    };
+    $(document).ready(function(){
+      $("#nations li.click").click(function(){
+        nationClick($(this));
+      });
+    });
+      
+  </script>
+</head>
+<div class="treeWrapper"><div class="levelLine" style="left:0px;"></div>
+<div class="levelLine" style="left:324px;"></div>
+<div class="levelLine" style="left:648px;"></div>
+<div class="levelLine" style="left:972px;"></div>
+<div class="levelLine" style="left:1296px;"></div>
+<div id="levels"><div>I</div>
+<div>II</div>
+<div>III</div>
+<div>IV</div>
+<div>V</div>
+<div>VI</div>
+<div>VII</div>
+<div>VIII</div>
+<div>IX</div>
+<div>X</div>
+</div>
+  <div id="tree">
+  <div class="tblock column1 row5"><div class="vicLogo"><img src="https://psv4.userapi.com/c812235/u378497397/docs/45a821de1836/Fiat_3000_modelB.png"></div><span class="mark" title="Fiat 3000">Fiat 3000</span><span class="level">I</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Light tank" title="Light tank"></span></a><img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRU" src="images/arrow/point8.png" width="1" height="216" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRU" src="images/arrow/point8.png" width="1" height="54" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRD" src="images/arrow/point8.png" width="1" height="54" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRD" src="images/arrow/point8.png" width="1" height="108" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRD" src="images/arrow/point8.png" width="1" height="270" alt="">
+</div>
+
+<div class="tblock column2 row2"><div class="vicLogo"><img src="https://cs14035.userapi.com/c812133/u378497397/docs/eae0e52f1a60/l3_20mm.png"></div><span class="mark" title="CV35 20 mm">CV35 20mm</span><span class="level">II</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column3 row2"><div class="vicLogo"><img src="https://psv4.userapi.com/c812736/u378497397/docs/5e74cbb5eef3/CV__39_Fast_Tank_39.jpg"></div><span class="mark" title="CV Fast Tank">CV Fast Tank</span><span class="level">III</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column4 row2"><div class="vicLogo"><img src="https://psv4.userapi.com/c816529/u378497397/docs/ebd46ec2902a/2i28Wpq.jpg"></div><span class="mark" title="Ansaldo Carro Turrinelli II">Ansaldo Turrinelli II</span><span class="level">IV</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="arrLRD" src="images/arrow/lt_rb8.png" alt="">
+</div>
+
+<div class="tblock column2 row3"><div class="vicLogo"><img src="https://cs14035.userapi.com/c816225/u378497397/docs/2b64e8af4c09/jrE790L.png"></div><span class="mark" title="Semovente L.3 da 47/32">Semov. 47/32 L.3</span><span class="level">II</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column3 row3"><div class="vicLogo"><img src="https://cs14035.userapi.com/c816236/u378497397/docs/b0002208abf0/Sem-75-18_Ariete_div_NA42.png"></div><span class="mark" title="Semovente da 75/18 / da 75/34">Semov. 75/18 / 75/34</span><span class="level">III</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column4 row3"><div class="vicLogo"><img src="https://psv4.userapi.com/c816636/u378497397/docs/87e4ed696252/semovente_75-46m43_c1.png"></div><span class="mark" title="Semovente da 75/46 / da 105/25 Bassoto">Semov. 75/46 / 105/25</span><span class="level">IV</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRU" src="images/arrow/point8.png" width="1" height="54" alt="">
+</div>
+<div class="tblock column5 row3"><div class="vicLogo"><img src="https://psv4.userapi.com/c816426/u378497397/docs/c637308bfd11/90-53_Prot.png"></div><span class="mark" title="Primo Studio da 90/53">Primo Studio 90/53</span><span class="level">V</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+</div>
+
+<div class="tblock column2 row1"><div class="vicLogo"><img src="https://cs14035.userapi.com/c816420/u378497397/docs/ce39d3bf9b58/FIAT-2000.png"></div><span class="mark" title="Fiat 2000">Fiat 2000</span><span class="level">II</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column2 row4"><div class="vicLogo"><img src="https://psv4.userapi.com/c812130/u378497397/docs/ce7bddba7c04/Sem_47-32-BlackShirts-Sicily43.png"></div><span class="mark" title="Semovente L.6 da 47/32">Semov. 47/32 L.6</span><span class="level">II</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column2 row5"><a href="tank/F12_Hotchkiss_H35" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f12_hotchkiss_h35.png"></div><span class="mark" title="Hotchkiss H35">H35</span><span class="level">II</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column2 row6"><a href="tank/F50_FCM36_20t" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f50_fcm36_20t.png"></div><span class="mark" title="FCM 36">FCM 36</span><span class="level">II</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column2 row7"><a href="tank/F49_RenaultR35" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f49_renaultr35.png"></div><span class="mark" title="Renault R35">R35</span><span class="level">II</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRU" src="images/arrow/point8.png" width="1" height="54" alt="">
+</div>
+<div class="tblock column2 row10"><a href="tank/F20_RenaultBS" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f20_renaultbs.png"></div><span class="mark" title="Renault FT 75 BS">FT BS</span><span class="level">II</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column3 row1"><div class="vicLogo"><img src="https://psv4.userapi.com/c812221/u378497397/docs/2d3a4fee259c/carro_turrinelli_cr.png"></div><span class="mark" title="Ansaldo Carro Turrinelli">Ansaldo Turrinelli</span><span class="level">III</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column3 row11"><a href="tank/F27_FCM_36Pak40" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f27_fcm_36pak40.png"></div><span class="mark" title="FCM 36 Pak 40">FCM36Pak40</span><span class="level">III</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="ПТ САУ" title="ПТ САУ"></span></a><span class="golden"><img src="images/gold.png" title="850" width="12" height="12"></span></div>
+<div class="tblock column3 row4"><div class="vicLogo"><img src="https://psv4.userapi.com/c812120/u378497397/docs/8f396baaa717/seml6_75_1.jpg"></div><span class="mark" title="Semovente L.6 da 75/32">Semov. 75/32 L.6</span><span class="level">III</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRU" src="images/arrow/point8.png" width="1" height="54" alt="">
+</div>
+<div class="tblock column3 row5"><a href="tank/F44_Somua_S35" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f44_somua_s35.png"></div><span class="mark" title="Somua S35">Somua S35</span><span class="level">III</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column3 row6"><a href="tank/F13_AMX38" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f13_amx38.png"></div><span class="mark" title="AMX 38">AMX 38</span><span class="level">III</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column3 row10"><a href="tank/F21_Lorraine39_L_AM" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f21_lorraine39_l_am.png"></div><span class="mark" title="Lorraine 39L AM">Lorr. 39L AM</span><span class="level">III</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column4 row1"><div class="vicLogo"><img src="https://cs14035.userapi.com/c816338/u378497397/docs/3a9001fa60d4/264px-Gl4_01.png"></div><span class="mark" title="Ansaldo GL-4">Ansaldo GL-4</span><span class="level">IV</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column4 row5"><a href="tank/F70_SARL42" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f70_sarl42.png"></div><span class="mark" title="SARL 42">SARL 42</span><span class="level">IV</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column4 row6"><a href="tank/F14_AMX40" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f14_amx40.png"></div><span class="mark" title="AMX 40">AMX 40</span><span class="level">IV</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column4 row10"><a href="tank/F66_AMX_Ob_Am105" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f66_amx_ob_am105.png"></div><span class="mark" title="AMX 105 AM mle. 47">AMX 105 AM</span><span class="level">IV</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column5 row1"><div class="vicLogo"><img src="https://cs14035.userapi.com/c816520/u378497397/docs/12295c180645/ansaldo32t.png"></div><span class="mark" title="Ansaldo P.32/GL-1">Ansaldo P.32/GL-1</span><span class="level">V</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column5 row5"><a href="tank/F11_Renault_G1R" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f11_renault_g1r.png"></div><span class="mark" title="Renault G1">G1 R</span><span class="level">V</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRU" src="images/arrow/point8.png" width="1" height="54" alt="">
+</div>
+<div class="tblock column5 row6"><a href="tank/F62_ELC_AMX" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f62_elc_amx.png"></div><span class="mark" title="AMX ELC bis">AMX ELC bis</span><span class="level">V</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column5 row9"><a href="tank/F28_105_leFH18B2" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f28_105_lefh18b2.png"></div><span class="mark" title="105 leFH18B2">leFH18B2</span><span class="level">V</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><span class="golden"><img src="images/gold.png" title="1500" width="12" height="12"></span></div>
+<div class="tblock column5 row10"><a href="tank/F22_AMX_105AM" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f22_amx_105am.png"></div><span class="mark" title="AMX 13 105 AM mle. 50">AMX 13 AM</span><span class="level">V</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column6 row1"><div class="vicLogo"><img src="https://psv4.userapi.com/c812230/u378497397/docs/a38662fc719e/t39_pr8_11.png"></div><span class="mark" title="Ansaldo P.71/GL-3">Ansaldo P.71/GL-3 </span><span class="level">VI</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column6 row4"><div class="vicLogo"><img src="https://psv4.userapi.com/c816437/u378497397/docs/a6a406770d36/Semovente_M41M.png"></div><span class="mark" title="Semovente da 90/53">Semov. 90/53</span><span class="level">VI</span><span class="class"><img src="images/type-AT-SPG.png" align="top" alt="Tank destroyer" title="Tank destroyer"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="arrLRD" src="images/arrow/lt_rb8.png" alt="">
+</div>
+<div class="tblock column6 row6"><a href="tank/F15_AMX_12t" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f15_amx_12t.png"></div><span class="mark" title="AMX 12 t">AMX 12 t</span><span class="level">VI</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineD" src="images/arrow/point8.png" width="1" height="216" alt="">
+</div>
+<div class="tblock column6 row10"><a href="tank/F23_AMX_13F3AM" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f23_amx_13f3am.png"></div><span class="mark" title="AMX 13 F3 AM">AMX 13 F3</span><span class="level">VI</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="arrTB" src="images/arrow/t_b8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column7 row1"><div class="vicLogo"><img src="https://psv4.userapi.com/c816339/u378497397/docs/68a6abcb6f99/ansaldo_magrini_s1.png"></div><span class="mark" title="Ansaldo Magrini Magniapan">Ansaldo Magrini</span><span class="level">VII</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column7 row4"><a href="tank/F07_AMX_M4_1945" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f07_amx_m4_1945.png"></div><span class="mark" title="AMX M4 mle. 45">AMX M4 45</span><span class="level">VII</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Тяжёлый танк" title="Тяжёлый танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column7 row5"><a href="tank/F69_AMX13_57_100" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f69_amx13_57_100.png"></div><span class="mark" title="AMX 13 57">AMX 13 57</span><span class="level">VII</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><span class="golden"><img src="images/gold.png" title="5000" width="12" height="12"></span></div>
+<div class="tblock column7 row6"><a href="tank/F16_AMX_13_75" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f16_amx_13_75.png"></div><span class="mark" title="AMX 13 75">AMX 13 75</span><span class="level">VII</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column7 row10"><a href="tank/F24_Lorraine155_50" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f24_lorraine155_50.png"></div><span class="mark" title="Lorraine 155 mle. 50">Lorr. 155 50</span><span class="level">VII</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column8 row1"><div class="vicLogo"><img src="https://psv4.userapi.com/c816135/u378497397/docs/c576c84e32ae/gl.png"></div><span class="mark" title="Ansaldo GL da 149 mm cannone">Ansaldo GL 149 mm</span><span class="level">VIII</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column8 row4"><a href="tank/F08_AMX_50_100" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f08_amx_50_100.png"></div><span class="mark" title="AMX 50 100">AMX 50 100</span><span class="level">VIII</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Тяжёлый танк" title="Тяжёлый танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column8 row5"><a href="tank/F65_FCM_50t" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f65_fcm_50t.png"></div><span class="mark" title="FCM 50 t">FCM 50 t</span><span class="level">VIII</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Тяжёлый танк" title="Тяжёлый танк"></span></a><span class="golden"><img src="images/gold.png" title="11900" width="12" height="12"></span></div>
+<div class="tblock column8 row6"><a href="tank/F17_AMX_13_90" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f17_amx_13_90.png"></div><span class="mark" title="AMX 13 90">AMX 13 90</span><span class="level">VIII</span><span class="class"><img src="images/type-lightTank.png" align="top" alt="Лёгкий танк" title="Лёгкий танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+<img class="lineRD" src="images/arrow/point8.png" width="1" height="54" alt="">
+</div>
+<div class="tblock column8 row7"><a href="tank/F73_M4A1_Revalorise" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f73_m4a1_revalorise.png"></div><span class="mark" title="M4A1 Revalorisé">M4A1 Rev.</span><span class="level">VIII</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><span class="golden"><img src="images/gold.png" title="7200" width="12" height="12"></span></div>
+<div class="tblock column8 row8"><a href="tank/F74_AMX_M4_1949" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f74_amx_m4_1949.png"></div><span class="mark" title="AMX M4 mle. 49">AMX M4 49</span><span class="level">VIII</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Тяжёлый танк" title="Тяжёлый танк"></span></a><span class="golden"><img src="images/gold.png" title="11700" width="12" height="12"></span></div>
+<div class="tblock column8 row10"><a href="tank/F25_Lorraine155_51" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f25_lorraine155_51.png"></div><span class="mark" title="Lorraine 155 mle. 51">Lorr. 155 51</span><span class="level">VIII</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column9 row1"><div class="vicLogo"><img src="https://psv4.userapi.com/c816135/u378497397/docs/c576c84e32ae/gl.png"></div><span class="mark" title="Ansaldo GL da 152 mm cannone">Ansaldo GL 152 mm</span><span class="level">IX</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column9 row4"><a href="tank/F09_AMX_50_120" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f09_amx_50_120.png"></div><span class="mark" title="AMX 50 120">AMX 50 120</span><span class="level">IX</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Тяжёлый танк" title="Тяжёлый танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column9 row5"><a href="tank/F19_Lorraine40t" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f19_lorraine40t.png"></div><span class="mark" title="Lorraine 40 t">Lorr. 40 t</span><span class="level">IX</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a></div>
+<div class="tblock column9 row6"><a href="tank/F75_Char_de_25t" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f75_char_de_25t.png"></div><span class="mark" title="Bat.-Châtillon 25 t AP">B-C 25 t AP</span><span class="level">IX</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column9 row7"><a href="tank/F71_AMX_30_prototype" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f71_amx_30_prototype.png"></div><span class="mark" title="AMX 30 1er prototype">AMX 30</span><span class="level">IX</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column9 row10"><a href="tank/F67_Bat_Chatillon155_55" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f67_bat_chatillon155_55.png"></div><span class="mark" title="Bat.-Châtillon 155 55">B-C 155 55</span><span class="level">IX</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+<img class="line2R" src="images/arrow/point8.png" width="81" height="1" alt="">
+</div>
+<div class="tblock column10 row1"><div class="vicLogo"><img src="https://psv4.userapi.com/c816135/u378497397/docs/c576c84e32ae/gl.png"></div><span class="mark" title="Ansaldo GL da 203 mm cannone">Ansaldo GL 203 mm</span><span class="level">X</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Heavy tank" title="Heavy tank"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+</div>
+<div class="tblock column10 row4"><a href="tank/F10_AMX_50B" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f10_amx_50b.png"></div><span class="mark" title="AMX 50 B">AMX 50 B</span><span class="level">X</span><span class="class"><img src="images/type-heavyTank.png" align="top" alt="Тяжёлый танк" title="Тяжёлый танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+</div>
+<div class="tblock column10 row6"><a href="tank/F18_Bat_Chatillon25t" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f18_bat_chatillon25t.png"></div><span class="mark" title="Bat.-Châtillon 25 t">B-C 25 t</span><span class="level">X</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+</div>
+<div class="tblock column10 row7"><a href="tank/F72_AMX_30" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f72_amx_30.png"></div><span class="mark" title="AMX 30 B">AMX 30 B</span><span class="level">X</span><span class="class"><img src="images/type-mediumTank.png" align="top" alt="Средний танк" title="Средний танк"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+</div>
+<div class="tblock column10 row10"><a href="tank/F38_Bat_Chatillon155_58" target="_top"><div class="vicLogo"><img src="images/vehicles/s/france-f38_bat_chatillon155_58.png"></div><span class="mark" title="Bat.-Châtillon 155 58">B-C 155 58</span><span class="level">X</span><span class="class"><img src="images/type-SPG.png" align="top" alt="САУ" title="САУ"></span></a><img class="arrLR" src="images/arrow/l_r8.png" alt="">
+</div>
+</div>
+</div>
+</html>
