@@ -43,7 +43,8 @@ namespace calc1
 
         private void eq(ref double a, double b)
         {
-            if (state0 == state.initial)
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
+                if (state0 == state.initial)
             {
                 box1.Text = "";
             }
@@ -63,7 +64,7 @@ namespace calc1
                     //a = System.Convert.ToDouble(box0.Text);
                 }
                 //state0 = state.initial;
-                b = 0;
+                //b = 0;
                 //box1.Text = "";
             }
             else if ((state0 == state.mod && prev == state.initial) || (prev == state.mod))
@@ -82,7 +83,7 @@ namespace calc1
                     //a = System.Convert.ToDouble(box0.Text);
                 }
                 //state0 = state.initial;
-                b = 0;
+                //b = 0;
                 //box1.Text = "";
 
             }
@@ -94,7 +95,7 @@ namespace calc1
                 box0.Text = "0";
                 //a = System.Convert.ToDouble(box0.Text);
                 //state0 = state.initial;
-                b = 0;
+                //b = 0;
                 //box1.Text = "";
             }
             else if ((state0 == state.minus && prev == state.initial) || (prev == state.minus))
@@ -106,7 +107,7 @@ namespace calc1
                 //a = System.Convert.ToDouble(box0.Text);
                 //state0 = state.initial;
                 //MessageBox.Show(a.ToString() + " - " + b.ToString());
-                b = 0;
+                //b = 0;
                 //box1.Text = "";
             }
             else if ((state0 == state.plus && prev == state.initial) || (prev == state.plus))
@@ -118,7 +119,7 @@ namespace calc1
                 //a = System.Convert.ToDouble(box0.Text);
                 //state0 = state.initial;
                 //MessageBox.Show(a.ToString()+" + "+b.ToString());
-                b = 0;
+                //b = 0;
                 //box1.Text = "";
             }
         }
@@ -128,7 +129,7 @@ namespace calc1
             if (box0.Text == "0") {
                 box0.Text = "";
             }
-            if (box0.Text.Length < 17)
+            if (box0.Text.Length < 23)
             {
                 box0.Text += (sender as Button).Content;
             }
@@ -140,6 +141,71 @@ namespace calc1
             {
                 box0.Text = "0";
             }
+
+            int j = box0.Text.Split(',').Length - 1;
+            if (j > 1)
+            {
+                Delete_Click(sender, e);
+            }
+
+            if (box0.Text.Length < 23)
+            for (int i = 0; i < box0.Text.Length; i++)
+            {
+                if ((box0.Text[i] >= '0') && (box0.Text[i] <= '9'))
+                {
+
+                }
+                else if (box0.Text[i] == 'E')
+                {
+
+                }
+                else if (box0.Text[i] == ',')
+                {
+
+                }
+                else if (box0.Text[i] == '+')
+                {
+                        if (i > 0)
+                            if (box0.Text[i - 1] != 'E')
+                            {
+                                Delete_Click(sender, e);
+                                Plus_Click(sender, e);
+                            }
+                }
+                else if (box0.Text[i] == '-')
+                {
+                        if (i != 0)
+                        {
+                            Delete_Click(sender, e);
+                            Minus_Click(sender, e);
+                        }
+                }
+                else if (box0.Text[i] == '*')
+                {
+                    Delete_Click(sender, e);
+                    Mult_Click(sender, e);
+                }
+                else if (box0.Text[i] == '/')
+                {
+                    Delete_Click(sender, e);
+                    Divide_Click(sender, e);
+                }
+                else if (box0.Text[i] == '%')
+                {
+                    Delete_Click(sender, e);
+                    Mod_Click(sender, e);
+                }
+                else if (box0.Text[i] == '=')
+                {
+                    Delete_Click(sender, e);
+                    eq(ref a, b);
+                }
+                else
+                {
+                    Delete_Click(sender, e);
+                }
+            }
+            else Delete_Click(sender, e);
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -171,7 +237,7 @@ namespace calc1
 
         private void Sign_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (System.Convert.ToDouble(box0.Text) != 0)
             {
                 if (box0.Text[0] == '-')
@@ -189,7 +255,7 @@ namespace calc1
         {
             if (state0 == state.initial)
             {
-                if (box0.Text != "-")
+                if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                     if (System.Convert.ToDouble(box0.Text) >= 0)
                 {
                     a = Math.Sqrt(System.Convert.ToDouble(box0.Text));
@@ -209,7 +275,7 @@ namespace calc1
 
         private void Divide_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (state0 == state.initial)
             {
                 a = System.Convert.ToDouble(box0.Text);
@@ -229,7 +295,7 @@ namespace calc1
 
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
             {
                 eq(ref a, System.Convert.ToDouble(box0.Text));
                 box0.Text = a.ToString();
@@ -250,7 +316,7 @@ namespace calc1
 
         private void Mod_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (state0 == state.initial)
             {
                 a = System.Convert.ToDouble(box0.Text);
@@ -270,7 +336,7 @@ namespace calc1
 
         private void Mult_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (state0 == state.initial)
             {
                 a = System.Convert.ToDouble(box0.Text);
@@ -290,7 +356,7 @@ namespace calc1
 
         private void Flip_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (state0 == state.initial)
             {
                 if (System.Convert.ToDouble(box0.Text) != 0)
@@ -308,7 +374,7 @@ namespace calc1
 
         private void Minus_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (state0 == state.initial)
             {
                 a = System.Convert.ToDouble(box0.Text);
@@ -322,13 +388,14 @@ namespace calc1
                 state0 = state.minus;
                 eq(ref a, System.Convert.ToDouble(box0.Text));
                 box1.Text += '-';
+                //box0.Text = "0";
                 prev = state0;
             }
         }
 
         private void Plus_Click(object sender, RoutedEventArgs e)
         {
-            if (box0.Text != "-")
+            if ((box0.Text != "-") && (box0.Text != "") && (box0.Text[box0.Text.Length - 1] != 'E') && (box0.Text[box0.Text.Length - 1] != '-') && (box0.Text[box0.Text.Length - 1] != '+'))
                 if (state0 == state.initial)
             {
                 a = System.Convert.ToDouble(box0.Text);
@@ -343,7 +410,7 @@ namespace calc1
                 eq(ref a, System.Convert.ToDouble(box0.Text));
                 box1.Text += '+';
                 prev = state0;
-                //box0.Text = "0";
+                box0.Text = "0";
                 //MessageBox.Show(b.ToString()+"many_plus");
             }
         }

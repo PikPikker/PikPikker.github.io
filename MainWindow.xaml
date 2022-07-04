@@ -8,7 +8,7 @@
         Title="Калькулятор 0.1" Height="382.293" Width="363.327">
     <Grid Margin="0,0,454,0">
         <TextBox x:Name="box1" Height="36" Margin="10,10,-335,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" IsReadOnly="True"/>
-        <TextBox x:Name="box0" Height="36" Margin="10,51,-335,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="TextBox_TextChanged" Text="0" IsReadOnly="True"/>
+        <TextBox x:Name="box0" Height="36" Margin="10,51,-335,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" TextChanged="TextBox_TextChanged" Text="0" IsReadOnly="False"/>
         <Button x:Name="delete" Content="&lt;-" HorizontalAlignment="Left" Margin="10,92,-45,0" VerticalAlignment="Top" Width="35" FontSize="24" Height="35" Click="Delete_Click"/>
         <Button x:Name="ce" Content="CE" HorizontalAlignment="Left" Margin="50,92,-85,0" VerticalAlignment="Top" Width="35" FontSize="24" Height="35" Click="Ce_Click"/>
         <Button x:Name="clear" Content="C" HorizontalAlignment="Left" Margin="90,92,-125,0" VerticalAlignment="Top" Width="35" FontSize="24" Height="35" Click="Clear_Click"/>
